@@ -1,0 +1,50 @@
+#include <iostream>
+//#include "stdafx.h"
+
+template<typename T>
+
+T msort(int *a, int l, int r)
+{
+	if (l == r) return;
+	int ser = (l + r) / 2;
+	msort(a, l, ser);
+	msort(a, ser + 1, r);
+	int i = l, j = ser + 1;
+	int *tmp = new int[r];
+	for (int k = 0; k < r - l + 1; k++)
+	{
+		if ((j>r) || ((i <= ser) && (a[i] < a[j])))
+		{
+			tmp[k] = a[i];
+			i++;
+		}
+		else
+		{
+			tmp[k] = a[j];
+			j++;
+		}
+	}
+	for (int i = 0; i < r - l + 1; i++)
+		a[l + i] = tmp[i];
+//	for (int i = 0; i < 20; i++)
+//		std::cout << a[i] << " ";
+//	std::cout << "\n";
+}
+
+//template<typename T>
+
+int main()
+{
+	//int a[20];
+	int *a = new int[20];
+	for (int i = 0; i < 20; i++)
+	{
+		a[i] = 0 + rand() % 50;
+		//std::cout << a[i] << " ";
+	}
+	std::cout << "\n";
+	msort(a, 0, 19);
+	//for (int i = 0; i < 20; i++)
+		//std::cout << a[i]<< " ";
+	system("pause");
+}

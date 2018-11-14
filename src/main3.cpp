@@ -1,4 +1,5 @@
 #include "task3.h"
+#include <cstring>
 
 
 template<class T>

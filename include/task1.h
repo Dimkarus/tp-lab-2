@@ -35,7 +35,7 @@ void merge(T *a, int l, int r)
 		}
 	}
 	for (int step = 0; step < r - l + 1; step++)
-		a[l + step] = tmp[step]
+		a[l + step] = tmp[step];
 }
 
 

@@ -23,7 +23,7 @@ void merge(T *a, int l, int r)
 	int i = l;
 	int j = mid + 1;
 	T *tmp = new T[r];
-	for (int step = 0; ster < r - l + 1; step++) {
+	for (int step = 0; step < r - l + 1; step++) {
 		if ((j > r) || ((i <= mid) && (cmp(a[i], a[j])))) {
 			tmp[step] = a[i];
 			i++;
